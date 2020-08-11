@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "a15-pipe"
+    }
+  },
+  "defaultProject": "a15-pipe",
+  "cli": {
+    "analytics": "53704c9e-d334-4ad6-b390-c91434421bbb"
+  }
 }
