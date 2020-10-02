@@ -10,7 +10,6 @@ import { PipePureComponent } from './pipe-pure/pipe-pure.component';
 import { PipeImpureComponent } from './pipe-impure/pipe-impure.component';
 import { FormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,13 +19,10 @@ import { FormsModule } from '@angular/forms';
     PipePureComponent,
     PipeImpureComponent,
     FlyingHeroesPipe,
-    FlyingHeroesImpurePipe
+    FlyingHeroesImpurePipe,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

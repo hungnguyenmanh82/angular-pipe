@@ -1,9 +1,7 @@
 <div class="pipe-impure-component-layout">
-  <h2>{{ title }}</h2>
-  <p style="color: red;">
-    trường hợp isCreateNewArray = true. thì pure = true/false là như nhau
-    <br>
-    trường hợp isCreateNewArray = false thì pure = true/false sẽ cho kết quả khác nhau
+  <h2>pipe-pure.component: (pure = false)</h2>
+  <p style="color: blue">
+    Pure = false: khi có thay đổi thành phần của variable thì Pipe sẽ đc gọi.
   </p>
   <p>
     New hero:
@@ -13,21 +11,27 @@
       (keyup.enter)="addHero(box.value); box.value = ''"
       placeholder="hero name"
     />
-    <input  type="checkbox" [(ngModel)]="canFly" /> can fly: {{canFly}}
+    <input type="checkbox" [(ngModel)]="canFly" /> can fly: {{ canFly }}
   </p>
   <p>
-    <input  type="checkbox" [(ngModel)]="isCreateNewArray" />isCreateNewArray = {{isCreateNewArray}}
+    <input type="checkbox" [(ngModel)]="isCreateNewArray" />isCreateNewArray =
+    {{ isCreateNewArray }}
     <button (click)="reset()">Reset</button>
   </p>
-
-  <h4>Heroes who fly = true (piped, pure=false)</h4>
+  <p style="color: red">
+    isCreateNewArray = true: mỗi lần add new Hero thì Array Heroes đc tạo mới
+    <br />
+    isCreateNewArray = false: Mỗi lần add new Hero thì Array Herroes ko tạo mới mà cập nhật thành
+    phần
+  </p>
+  <h3>Array Herro( piped, pure=false): filter(can-fly = true)</h3>
   <div id="flyers">
     <div *ngFor="let hero of heroes | flyingHeroesImpure">
       {{ hero.name }}
     </div>
   </div>
 
-  <h4>All Heroes (no pipe)</h4>
+  <h3>Array Heroes(no pipe)</h3>
   <div id="all">
     <div *ngFor="let hero of heroes">
       {{ hero.name }}

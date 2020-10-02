@@ -4,18 +4,17 @@ import { HEROES, Hero } from '../heroes';
 @Component({
   selector: 'app-pipe-impure',
   templateUrl: './pipe-impure.component.html',
-  styleUrls: ['./pipe-impure.component.scss']
+  styleUrls: ['./pipe-impure.component.scss'],
 })
-export class PipeImpureComponent  implements OnInit  {
+export class PipeImpureComponent implements OnInit {
   heroes: Hero[] = [];
-  canFly:boolean = false;
+  canFly: boolean = false;
 
   isCreateNewArray: boolean = true;
-  title = 'Flying Heroes (pipe, pure=false)';
 
-  constructor() {  }
+  constructor() {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.canFly = true;
     this.isCreateNewArray = true;
     this.reset();
@@ -23,8 +22,10 @@ export class PipeImpureComponent  implements OnInit  {
 
   addHero(name: string) {
     name = name.trim();
-    if (!name) { return; }
-    const hero = new Hero(name,this.canFly);
+    if (!name) {
+      return;
+    }
+    const hero = new Hero(name, this.canFly);
 
     // https://www.tutorialspoint.com/typescript/typescript_arrays.htm
     if (!this.isCreateNewArray) {
@@ -42,6 +43,7 @@ export class PipeImpureComponent  implements OnInit  {
     }
   }
 
-  reset() { this.heroes = HEROES.slice(); }
-
+  reset() {
+    this.heroes = HEROES.slice();
+  }
 }

@@ -2,10 +2,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 import { Hero } from './heroes';
 
+// Pure (true) = default: khi thay đổi thành phần của biến Pipe sẽ ko đc gọi. (performance nhanh hơn)
 @Pipe({ name: 'flyingHeroes' })
 export class FlyingHeroesPipe implements PipeTransform {
-  transform(allHeroes: Hero[]): Hero[]{
-    return allHeroes.filter(hero => hero.canFly);
+  transform(allHeroes: Hero[]): Hero[] {
+    return allHeroes.filter((hero) => hero.canFly);
   }
 }
 
@@ -16,6 +17,6 @@ export class FlyingHeroesPipe implements PipeTransform {
 /////// Identical except for the pure flag
 @Pipe({
   name: 'flyingHeroesImpure',
-  pure: false
+  pure: false,
 })
 export class FlyingHeroesImpurePipe extends FlyingHeroesPipe {}
