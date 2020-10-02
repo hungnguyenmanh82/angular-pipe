@@ -27,14 +27,14 @@
   <h3>Array Herro( piped, pure=false): filter(can-fly = true)</h3>
   <div id="flyers">
     <div *ngFor="let hero of heroes | flyingHeroesImpure">
-      {{ hero.name }}
+      {{ hero | json }}
     </div>
   </div>
 
   <h3>Array Heroes(no pipe)</h3>
   <div id="all">
     <div *ngFor="let hero of heroes">
-      {{ hero.name }}
+      {{ hero | json }}
     </div>
   </div>
 </div>
