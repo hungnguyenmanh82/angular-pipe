@@ -1,9 +1,10 @@
 <div class="pipe-pure-component-layout">
   <h2>pipe-pure.component: (pure = true)</h2>
   <p style="color: blue">
-    Pure = true: khi thay đổi thành phần của biến Pipe sẽ ko đc gọi. (performance nhanh hơn)
+    Pure = true: khi thay đổi thành phần của biến thì Pipe sẽ ko đc gọi để xử lý biến. (performance
+    nhanh hơn)
     <br />
-    Pure = false: khi có thay đổi thành phần của variable thì Pipe sẽ đc gọi.
+    Pure = false: khi có thay đổi thành phần của variable, thì Pipe sẽ đc gọi để xử lý biến
   </p>
 
   <p>
@@ -22,10 +23,11 @@
     <button (click)="reset()">Reset</button>
   </p>
   <p style="color: red">
-    isCreateNewArray = true: mỗi lần add new Hero thì Array Heroes đc tạo mới
+    isCreateNewArray = true: mỗi lần add new Hero thì Array Heroes đc tạo mới lại nên purePile đc
+    gọi
     <br />
-    isCreateNewArray = false: Mỗi lần add new Hero thì Array Herroes ko tạo mới mà cập nhật thành
-    phần
+    isCreateNewArray = false: Mỗi lần add new Hero thì sẽ cập nhật vào cuối Array Herroes cũ nên
+    pure Pile ko đc gọi
   </p>
 
   <h3>Array Herro( piped, pure=true): filter(can-fly = true)</h3>
